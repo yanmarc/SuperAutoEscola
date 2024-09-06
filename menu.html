@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="styles-interface-grafica.css">
+    <script src="game.js" defer></script>
+</head>
+<body>
+    <div class="menu-container">
+        <!-- Slots na parte superior -->
+        <div class="top-slots">
+            <div class="top-slot slot"></div>
+            <div class="top-slot slot"></div>
+            <div class="top-slot slot"></div>
+            <div class="top-slot slot"></div>
+            <div class="top-slot slot"></div>
+        </div>
+
+        <!-- Slots na parte inferior (Loja) -->
+        <div class="bottom-slots">
+            <div class="bottom-slot slot"></div>
+            <div class="bottom-slot slot"></div>
+            <div class="bottom-slot slot"></div>
+        </div>
+
+        <!-- Slot direito -->
+        <div class="right-slot">
+            <div class="slot"></div>
+        </div>
+
+        <!-- Botão de Jogar -->
+        <a href="/partida.html"><button class="play-button">Jogar</button></a>
+
+        <!-- Botão de Resetar Loja -->
+        <button class="reset-button" onclick="resetShop()">Resetar Loja</button>
+        
+        <!-- Pop-up para mostrar informações do personagem -->
+        <div id="popup" class="popup">
+            <div id="popup-content"></div>
+            <button onclick="closePopup()">Fechar</button>
+        </div>
+    </div>
+    <script>
+        // Função para salvar o personagem no localStorage
+        function comprarPersonagem(personagem) {
+            let personagensComprados = JSON.parse(localStorage.getItem('personagensComprados')) || [];
+            personagensComprados.push(personagem);
+            localStorage.setItem('personagensComprados', JSON.stringify(personagensComprados));
+            alert(personagem + " foi comprado!");
+        }
+
+        // Função para iniciar a partida
+        function iniciarPartida() {
+            window.location.href = 'partida.html';
+        }
+    </script>    
+</body>
+</html>

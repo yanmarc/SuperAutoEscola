@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partida</title>
+    <link rel="stylesheet" href="partida.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Slots do lado esquerdo -->
+        <div class="left-slots">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+        </div>
+
+        <!-- Slots do lado direito -->
+        <div class="right-slots">
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+        </div>
+        <!-- Adicionando uma div para o pop-up -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span id="close-popup" class="close-popup">&times;</span>
+                <h2 id="popup-title"></h2>
+                <p id="popup-description"></p>
+            </div>
+        </div>
+        <div id="time-jogador"></div>
+        
+        <!-- Botões para comprar personagens (adapte conforme sua loja) -->
+        <button id="comprar1">Comprar Yan</button>
+        <button id="comprar2">Comprar Marcos</button>
+        <button id="comprar3">Comprar Nataniel</button>
+        
+        <!-- Botão para iniciar a partida -->
+        <button id="iniciar-partida">Iniciar Partida</button>
+                
+    </div>
+    <script>
+        // Função para carregar os personagens comprados do localStorage e exibi-los
+        function carregarPersonagens() {
+            let personagensComprados = JSON.parse(localStorage.getItem('personagensComprados')) || [];
+            let timeContainer = document.getElementById('time-jogador');
+
+            personagensComprados.forEach(personagem => {
+                let personagemDiv = document.createElement('div');
+                personagemDiv.classList.add('personagem');
+                personagemDiv.innerText = personagem;
+                timeContainer.appendChild(personagemDiv);
+            });
+        }
+
+        // Carregar personagens assim que a página for carregada
+        window.onload = carregarPersonagens;
+    </script>    
+</body>
+</html>

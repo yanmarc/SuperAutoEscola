@@ -1,0 +1,77 @@
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fundo verde gramado para a página de partida */
+body {
+  background-color: #4CAF50; /* Verde gramado */
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Evita rolagem */
+}
+
+.game-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 0 5%;
+}
+
+.left-slots, .right-slots {
+  display: flex;
+  flex-direction: row; /* Slots alinhados horizontalmente */
+  justify-content: center;
+  align-items: center;
+}
+
+.slot {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #D3D3D3; /* Cinza claro */
+  border: 2px solid #A9A9A9; /* Cinza escuro */
+  margin: 10px;
+}
+
+/* Estilo para o pop-up */
+.popup {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.slot {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #D3D3D3; /* Cinza claro */
+    border: 2px solid #A9A9A9; /* Cinza escuro */
+    margin: 10px;
+    cursor: pointer; /* Cursor de mão para clicar */
+}
